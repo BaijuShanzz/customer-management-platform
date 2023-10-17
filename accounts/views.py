@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def main(request):
     return render(request, 'accounts/main.html')
+
+
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')
