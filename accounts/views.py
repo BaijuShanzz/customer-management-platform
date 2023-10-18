@@ -8,3 +8,6 @@ def main(request):
 
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
+
+def status(request):
+    return render(request, 'accounts/status.html')
