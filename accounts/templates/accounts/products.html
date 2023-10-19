@@ -1,0 +1,22 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+{% include 'accounts/navbar.html' %}
+<hr>
+<div class="row mt-5 ml-5">
+    <div class="col-m1">
+        <div class="card card-body">
+            <h5>Products</h5>
+        </div>
+        <div class="card card-body">
+            <table class="table">
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

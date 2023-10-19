@@ -11,3 +11,6 @@ def dashboard(request):
 
 def status(request):
     return render(request, 'accounts/status.html')
+
+def products(request):
+    return render(request, 'accounts/products.html')
