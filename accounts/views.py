@@ -1,19 +1,24 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 def main(request):
-    return render(request, 'accounts/main.html')
-
-
-def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+    orders = Order.objects.all()
+    customers = Customer.objects.all()
+    
+    total_customers = customers.count()
+    total_orders = orders.count()
+    delivered = orders.filter(status= 'Deliverd').count()
+    pending = orders.filter(status= 'pending').count()
+    context = {'orders':orders,'customers':customers,'total_customers':total_customers,'total_orders':total_orders,'delivered':delivered,'pending':pending}
+    return render(request, 'accounts/dashboard.html',context)
 
 def status(request):
     return render(request, 'accounts/status.html')
 
 def products(request):
-    return render(request, 'accounts/products.html')
+    products = Product.objects.all()
+    return render(request, 'accounts/products.html',{'products':products})
 
 def customer(request):
     return render(request, 'accounts/customer.html')
